@@ -1,0 +1,25 @@
+{
+    "name": "torxakis",
+    "displayName": "Torxakis",
+    "description": "Torxakis language extension for vscode",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "torxakis",
+            "aliases": ["Torxakis", "torxakis"],
+            "extensions": [".txs"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "torxakis",
+            "scopeName": "source.txs",
+            "path": "./syntaxes/torxakis.tmLanguage.json"
+        }]
+    }
+}

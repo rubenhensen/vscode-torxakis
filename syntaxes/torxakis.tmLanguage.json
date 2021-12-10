@@ -1,0 +1,41 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Torxakis",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.torxakis",
+				"match": "\\b(IF|FI|THEN)\\b"
+			},
+			{
+				"name": "keyword.other.torxakis",
+				"match": "\\b(TYPEDEF|FUNCDEF|PROCDEF|ENDDEF|CHANDEF|MODELDEF|MAPPERDEF|CNECTDEF|CHAN|ENCODE|DECODE|IN|OUT|HOST|PORT|CLIENTSOCK|SERVERSOCK|BEHAVIOUR|IF|THEN|ELSE|FI|LET|PURPDEF|HIT|MISS|GOAL|HIDE|NI|SYNC|EXIT|ACCEPT|STAUTDEF|VAR|STATE|INIT|TRANS|ISTEP|QSTEP|CONSTDEF)\\b"
+			},
+			{
+				"name": "keyword.operator.torxakis",
+				"match": "\\b(::|::=|->|<-|!|[[|]]|/\\|\\/|:=)\\b"
+			}
+		]
+		},
+		"strings": {
+			"name": "string.quoted.double.torxakis",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.torxakis",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.txs"
+}
