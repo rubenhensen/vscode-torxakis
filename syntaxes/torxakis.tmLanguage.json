@@ -10,6 +10,9 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
 		}
 	],
 	"repository": {
@@ -51,6 +54,10 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"numbers": {
+			"name": "constant.numeric",
+			"match": "\\b[0-9]+"
 		}
 	},
 	"scopeName": "source.txs"
