@@ -3,6 +3,9 @@
 	"name": "Torxakis",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -10,6 +13,19 @@
 		}
 	],
 	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-dash.torxakis",
+					"match": "\\--[^\n]*"
+				},
+				{
+					"name": "comment.block.torxakis",
+					"begin": "{\\-",
+					"end": "\\-}"
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.torxakis",
