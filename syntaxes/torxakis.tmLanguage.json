@@ -20,7 +20,7 @@
 			"patterns": [
 				{
 					"name": "comment.line.double-dash.torxakis",
-					"match": "\\--[^\n]*"
+					"match": "\\--[^\r\n]*"
 				},
 				{
 					"name": "comment.block.torxakis",
@@ -30,33 +30,42 @@
 			]
 		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.torxakis",
-				"match": "\\b(IF|FI|THEN)\\b"
-			},
-			{
-				"name": "keyword.other.torxakis",
-				"match": "\\b(TYPEDEF|FUNCDEF|PROCDEF|ENDDEF|CHANDEF|MODELDEF|MAPPERDEF|CNECTDEF|CHAN|ENCODE|DECODE|IN|OUT|HOST|PORT|CLIENTSOCK|SERVERSOCK|BEHAVIOUR|IF|THEN|ELSE|FI|LET|PURPDEF|HIT|MISS|GOAL|HIDE|NI|SYNC|EXIT|STOP|ACCEPT|STAUTDEF|VAR|STATE|INIT|TRANS|ISTEP|QSTEP|CONSTDEF)\\b"
-			},
-			{
-				"name": "keyword.operator.torxakis",
-				"match": "(?<=\\s|\\w|^)(->|<-|\\[\\]|##|>->|>>>|\\[>>|\\[><|::=|::|=>>|\\|\\||\\|\\|\\||\\|\\[|\\]\\||\\[\\[|\\]\\]|\\?|!|#|=|\\||\\+|\\-|\\*|\\^|/|\\\\|<|>|@|&|%|:=)"
-			}
-		]
-		},
-		"strings": {
-			"name": "string.quoted.double.torxakis",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.torxakis",
-					"match": "\\\\."
+					"name": "keyword.control.torxakis",
+					"match": "\\b(IF|FI|THEN)\\b"
+				},
+				{
+					"name": "keyword.other.torxakis",
+					"match": "\\b(TYPEDEF|FUNCDEF|PROCDEF|ENDDEF|CHANDEF|MODELDEF|MAPPERDEF|CNECTDEF|CHAN|ENCODE|DECODE|IN|OUT|HOST|PORT|CLIENTSOCK|SERVERSOCK|BEHAVIOUR|IF|THEN|ELSE|FI|LET|PURPDEF|HIT|MISS|GOAL|HIDE|NI|SYNC|EXIT|STOP|ACCEPT|STAUTDEF|VAR|STATE|INIT|TRANS|ISTEP|QSTEP|CONSTDEF)\\b"
+				},
+				{
+					"name": "keyword.operator.torxakis",
+					"match": "(?<=\\s|\\w|^)(->|<-|\\[\\]|##|>->|>>>|\\[>>|\\[><|::=|::|=>>|\\|\\||\\|\\|\\||\\|\\[|\\]\\||\\[\\[|\\]\\]|\\?|!|#|=|\\||\\+|\\-|\\*|\\^|/|\\\\|<|>|@|&|%|:=)"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.torxakis",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.torxakis",
+							"match": "\\\\\""
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.torxakis",
+					"match": "'(\\\\'|[^\\\\'])'"
 				}
 			]
 		},
 		"numbers": {
-			"name": "constant.numeric",
+			"name": "constant.numeric.torxakis",
 			"match": "\\b[0-9]+"
 		}
 	},
