@@ -30,8 +30,8 @@
     ],
     // symbols after which to automatically increase / decrease indentation
     "indentationRules": {
-        // auto-indent after a *DEF, IF, THEN, ELSE or IN
-        "increaseIndentPattern": "(?<!\\bCHAN\\s*)\\b(TYPEDEF|FUNCDEF|PROCDEF|CHANDEF|MODELDEF|MAPPERDEF|CNECTDEF|PURPDEF|STAUTDEF|CONSTDEF|IF|THEN|ELSE|IN)\\b((?!\\b(ENDDEF|FI|NI)\\b).)*$",
+        // auto-indent after a *DEF, IF, THEN, ELSE, IN, BEHAVIOUR, STATE, VAR, INIT, TRANS
+        "increaseIndentPattern": "((?<!\\bCHAN\\s*)\\b(TYPEDEF|FUNCDEF|PROCDEF|CHANDEF|MODELDEF|MAPPERDEF|CNECTDEF|PURPDEF|STAUTDEF|CONSTDEF|IF|THEN|ELSE|IN)\\b((?!\\b(ENDDEF|FI|NI)\\b).)*)|\\b(BEHAVIOUR|STATE|VAR|INIT|TRANS)\\s*$",
         "decreaseIndentPattern": "^\\s*\\b(ENDDEF|THEN|ELSE|FI|NI)\\b"
     }
 }
