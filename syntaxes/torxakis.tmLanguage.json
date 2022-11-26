@@ -33,7 +33,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.torxakis",
-					"match": "\\b(IF|FI|THEN)\\b"
+					"match": "\\b(IF|FI|THEN|ELSE)\\b"
 				},
 				{
 					"name": "keyword.other.torxakis",
