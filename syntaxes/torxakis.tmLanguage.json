@@ -3,38 +3,70 @@
 	"name": "Torxakis",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.torxakis",
-				"match": "\\b(IF|FI|THEN)\\b"
-			},
-			{
-				"name": "keyword.other.torxakis",
-				"match": "\\b(TYPEDEF|FUNCDEF|PROCDEF|ENDDEF|CHANDEF|MODELDEF|MAPPERDEF|CNECTDEF|CHAN|ENCODE|DECODE|IN|OUT|HOST|PORT|CLIENTSOCK|SERVERSOCK|BEHAVIOUR|IF|THEN|ELSE|FI|LET|PURPDEF|HIT|MISS|GOAL|HIDE|NI|SYNC|EXIT|ACCEPT|STAUTDEF|VAR|STATE|INIT|TRANS|ISTEP|QSTEP|CONSTDEF)\\b"
-			},
-			{
-				"name": "keyword.operator.torxakis",
-				"match": "\\b(::|::=|->|<-|!|[[|]]|/\\|\\/|:=)\\b"
-			}
-		]
-		},
-		"strings": {
-			"name": "string.quoted.double.torxakis",
-			"begin": "\"",
-			"end": "\"",
+		"comments": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.torxakis",
-					"match": "\\\\."
+					"name": "comment.line.double-dash.torxakis",
+					"match": "\\--[^\r\n]*"
+				},
+				{
+					"name": "comment.block.torxakis",
+					"begin": "{\\-",
+					"end": "\\-}"
 				}
 			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.torxakis",
+					"match": "\\b(IF|FI|THEN|ELSE)\\b"
+				},
+				{
+					"name": "keyword.other.torxakis",
+					"match": "\\b(TYPEDEF|FUNCDEF|PROCDEF|ENDDEF|CHANDEF|MODELDEF|MAPPERDEF|CNECTDEF|CHAN|ENCODE|DECODE|IN|OUT|HOST|PORT|CLIENTSOCK|SERVERSOCK|BEHAVIOUR|IF|THEN|ELSE|FI|LET|PURPDEF|HIT|MISS|GOAL|HIDE|NI|SYNC|EXIT|STOP|ACCEPT|STAUTDEF|VAR|STATE|INIT|TRANS|ISTEP|QSTEP|CONSTDEF)\\b"
+				},
+				{
+					"name": "keyword.operator.torxakis",
+					"match": "(?<=\\s|\\w|^)(->|<-|\\[\\]|##|>->|>>>|\\[>>|\\[><|::=|::|=>>|\\|\\||\\|\\|\\||\\|\\[|\\]\\||\\[\\[|\\]\\]|\\?|!|#|=|\\||\\+|\\-|\\*|\\^|/\\\\|\\\\/|/|\\\\|<|>|@|&|%|:=)"
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.torxakis",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.torxakis",
+							"match": "\\\\\""
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.torxakis",
+					"match": "'(\\\\'|[^\\\\'])'"
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.torxakis",
+			"match": "\\b[0-9]+"
 		}
 	},
 	"scopeName": "source.txs"
