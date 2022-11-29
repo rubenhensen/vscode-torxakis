@@ -2,7 +2,7 @@
     "name": "torxakis",
     "displayName": "Torxakis",
     "description": "Torxakis language extension for vscode",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.63.0"
     },
